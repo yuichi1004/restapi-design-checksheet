@@ -10,6 +10,7 @@ Please refer to the reference for ther further detail.
   - [Resource Representation](#resource-representation)
 - [Methods](#methods)
   - [Standard HTTP Methods](#standard-http-methods)
+  - [Custom Verb](#custom-verb)
   - [POST](#post)
   - [PATCH](#patch)
 - [Consistency](#consistensy)
@@ -83,9 +84,23 @@ GET /products/{product-id}/skus/{sku-id}  -- Use if {sku-id} can be unique with 
 
 ```
 POST /users        -- Good
-POST /users/create -- Avoid
-POST /users/login  -- Acceptable
+POST /users/create -- Bad
 ```
+
+[TOC](#toc)
+
+### Custom Verb
+
+- Custom verb MAY be allowed if does not fit to any standard method
+
+```
+POST /users/login  -- Acceptable
+POST /users:login  -- Acceptable
+```
+
+- References
+  - [Google Cloud API - Custom Methods](https://cloud.google.com/apis/design/custom_methods#http_mapping)
+  - [これからの Microservices (JP)](https://www.slideshare.net/zigorou/microservices-57643957/19)
 
 [TOC](#toc)
 
