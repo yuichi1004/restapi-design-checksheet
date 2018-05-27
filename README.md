@@ -144,9 +144,23 @@ GET /users/{user-id}
 If-None-Match: w/"1234-5678-9012"
 ```
 
+- Collection resource response SHOULD include `etag` attributes for each response (refer to Google JSON Style Guide)
+
+```
+HTTP/1.1 200 OK
+
+{
+  "items": [
+    { "etag": "w/\"1234-5678-9010\"", ... }
+    { "etag": "w/\"1234-5678-9011\"", ... }
+  ]
+}
+```
+
 - References
   - [Hypertext Transfer Protocol (HTTP/1.1): Conditional Requests](https://tools.ietf.org/html/rfc7232)
   - [Google Cloud API - Design Patterns](https://cloud.google.com/apis/design/design_patterns#etags)
+  - [Google JSON Style Guide](https://google.github.io/styleguide/jsoncstyleguide.xml)
 
 [TOC](#toc)
 
