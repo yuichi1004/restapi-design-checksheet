@@ -269,7 +269,7 @@ HTTP/1.1 302 Not Modified
 
 ## Content Negotiation
 
-### Content Localization
+### Localization
 
 - Use `Accept-Language` to get localized resource.
 
@@ -280,8 +280,35 @@ Accept-Language: fr
 { "name": "art de l'informatique", ... }
 ```
 
+- There are no standard to handle localized attribute but here are several known approaches
+  - Technique used in OpenID Dynamic Client Registration [RFC7591]
+  - `lang` attributes defined in Google JSON Style Guide
+
+```
+# Technique uesed in RFC7591
+POST /users
+
+{
+  "name#en": "Yuichi",
+  "name#ja": "雄一"
+}
+```
+```
+# Google JSON Style Guide
+POST /users
+
+{
+  "items": [
+    { "lang": "en", "name": "Yuichi"},
+    { "lang": "ja", "name": "雄一"}
+  ]
+}
+```
+
 - References
   - [Hypertext Transfer Protocol (HTTP/1.1): Semantics and Content](https://tools.ietf.org/html/rfc7231#section-5.3.5)
-  - [これからの Microservices (JP)](https://www.slideshare.net/zigorou/microservices-57643957/30)
+  - [これからの Microservices (JP)](https://www.slideshare.net/zigorou/microservices-57643957/32)
+  - [OAuth 2.0 Dynamic Client Registration Protocol](https://tools.ietf.org/html/rfc7591)
+  - [Google JSON Style Guide](https://google.github.io/styleguide/jsoncstyleguide.xml)
 
 [TOC](#toc)
