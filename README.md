@@ -1,4 +1,4 @@
-# REST API Design Check Sheet 
+# REST API Design Check Sheet
 
 This sheet is a collection of REST API best practices.
 Each section has references to series of REST API design guidelines, RFCs, and/or articles which support the practice.
@@ -7,7 +7,7 @@ Please refer to the reference for ther further detail.
 ## TOC
 
 - [Resource](#resource)
-  - [Resource and Collection Resource](#resource-and-collection-resource)
+  - [Resource Representation](#resource-representation)
 - [Methods](#methods)
   - [Standard HTTP Methods](#standard-http-methods)
   - [POST](#post)
@@ -19,13 +19,13 @@ Please refer to the reference for ther further detail.
   - [Cache Control](#cache-control)
   - [Cache Validation](#cache-validation)
 - [Content Negotiation](#content-negotiation)
-  - [Content Localization](#content-localization)
+  - [Localization](#localization)
 
 ## Resource
 
 - REST API should be resource oriented API described below.
 
-### Resource and Collection Resource
+### Resource Representation
 
 - URI identifies a resource.
 - A resource can be nested by collection resource.
